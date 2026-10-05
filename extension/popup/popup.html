@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YouTube Transcript</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="title-block">
+        <h1 id="title" class="title">YouTube Transcript</h1>
+        <p id="subtitle" class="subtitle"></p>
+      </div>
+    </header>
+
+    <section id="controls" class="controls" hidden>
+      <div class="row">
+        <label class="sr-only" for="track">Caption language</label>
+        <select id="track" class="track"></select>
+      </div>
+      <div class="row">
+        <label class="sr-only" for="search">Search transcript</label>
+        <input id="search" class="search" type="search" placeholder="Search transcript" autocomplete="off" />
+        <span id="match-count" class="match-count" aria-live="polite"></span>
+      </div>
+      <div class="row actions">
+        <label class="toggle"><input id="timestamps" type="checkbox" checked /> Timestamps</label>
+        <label class="toggle" title="Highlight the line that is playing now"><input id="follow" type="checkbox" /> Follow</label>
+        <span class="spacer"></span>
+        <button id="copy" type="button" class="btn primary">Copy</button>
+        <div class="download">
+          <label class="sr-only" for="format">Download format</label>
+          <select id="format" class="format">
+            <option value="txt">.txt</option>
+            <option value="srt">.srt</option>
+            <option value="vtt">.vtt</option>
+            <option value="json">.json</option>
+          </select>
+          <button id="download" type="button" class="btn">Download</button>
+        </div>
+      </div>
+    </section>
+
+    <main id="status" class="status" role="status"></main>
+    <ol id="transcript" class="transcript" hidden></ol>
+
+    <footer id="footer" class="footer" hidden></footer>
+
+    <script src="../src/core.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

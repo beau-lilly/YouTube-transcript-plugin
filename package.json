@@ -1,0 +1,16 @@
+{
+  "name": "youtube-transcript-extension",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome and Safari extension that shows the transcript of the YouTube video in the open tab.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:e2e": "node test/e2e/extension.e2e.js",
+    "package:chrome": "sh scripts/package-chrome.sh",
+    "build:safari": "sh scripts/build-safari.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}
